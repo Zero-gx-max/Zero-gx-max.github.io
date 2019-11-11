@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Questions page</title>
+<style>
+  .radio-toolbar input[type="radio"] {
+    display: none;
+  }
+
+  .radio-toolbar label {
+    border-style: solid;
+    border-radius: 1px;
+    border-color: cornflowerblue;
+    border-width: 1px;
+    display: inline-block;
+    background-color: #66a5ad;
+    padding: 4px 11px;
+    font-family: Arial,serif;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .radio-toolbar input[type="radio"]:checked+label {
+    background-color: #003b46;
+  }
+.question{color: #2a3132;
+  font-family: Verdana,serif;
+  font-size: 35px;
+}
+
+.header {
+  background-color: #90afc5;
+  color: #58257b;
+  padding: 20px;
+  text-align: center;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #336b87;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Thay đổi màu liên kết khi di chuột qua */
+.topnav a:hover {
+  background-color: #763626;
+  color: white;
+  font-weight: bold
+}
+
+</style>
+<meta charset="UTF-8">
+</head>
+<body>
+<div class="header">
+  <h1 style='font-size: 50px'>Unit 4: Caring for those in need</h1>
+</div>
+<div class="topnav">
+  <a href="#q1" style='font-size: 25px; font-family: Verdana;'>Question 1</a>
+  <a href="#q2" style='font-size: 25px; font-family: Verdana;'>Question 2</a>
+  <a href="#q3" style='font-size: 25px; font-family: Verdana;'>Question 3</a>
+  <a href="#q4" style='font-size: 25px; font-family: Verdana;'>Question 4</a>
+  <a href="#q5" style='font-size: 25px; font-family: Verdana;'>Question 5</a>
+</div>
+
+<div class="radio-toolbar">
+<p class='question' id="q1"> Question 1: </p>
+  <input type='radio' value='Yes' Id='a1' name='a' /><label for='a1'>Yes</label><br/>
+  <input type='radio' value='No' Id='a2' name= 'a' /><label for='a2'>No</label><br/>
+
+<p class='question' id="q2"> Question 2: </p>
+  <input type='radio' value='Yes' Id='b1' name='b' /><label for='b1'>Yes</label><br/>
+  <input type='radio' value='No' Id='b2' name= 'b' /><label for='b2'>No</label><br/>
+
+<p class='question' id="q3"> Question 3: </p>
+  <input type='radio' value='Yes' Id='c1' name='c' /><label for='c1'>Yes</label><br/>
+  <input type='radio' value='No' Id='c2' name= 'c' /><label for='c2'>No</label><br/>
+
+<p class='question' id="q4"> Question 4: </p>
+  <input type='radio' value='Yes' Id='d1' name='d' /><label for='d1'>Yes</label><br/>
+  <input type='radio' value='No' Id='d2' name= 'd' /><label for='d2'>No</label><br/>
+
+<p class='question' id="q5"> Question 5: </p>
+  <input type='radio' value='Yes' Id='e1' name='e' /><label for='e1'>Yes</label><br/>
+  <input type='radio' value='No' Id='e2' name= 'e' /><label for='e2'>No</label><br/>
+
+<input type='button' id='btn1' value='Submit Here' /><br/>
+</div>
+<p id = "gg"></p>
+
+<script language="javascript"> 
+var rate = 0;
+ document.getElementById("btn1").onclick = function ()
+            {
+              var a1 = document.getElementById("a1");
+              var a2 = document.getElementById("a2");
+			  var b1 = document.getElementById("b1");
+              var b2 = document.getElementById("b2");
+			  var c1 = document.getElementById("c1");
+              var c2 = document.getElementById("c2");
+			  var d1 = document.getElementById("d1");
+              var d2 = document.getElementById("d2");
+			  var e1 = document.getElementById("e1");
+              var e2 = document.getElementById("e2");
+        
+function q1() {
+  if (a1.checked === true) {
+    rate++;
+  } else if (a2.checked === true) {
+    rate--;
+  }
+}
+function q2() {if (b1.checked === true){
+                        rate++;
+                    }
+              else if (b2.checked === true){
+                rate--;}
+				}
+function q3() {if (c1.checked === true){
+                        rate++;
+                    }
+              else if (c2.checked === true){
+                rate--;}
+				}
+function q4() {if (d1.checked === true){
+                        rate++;
+                    }
+              else if (d2.checked === true){
+                rate--;}
+				}
+function q5() {if (e1.checked === true){
+                        rate++;
+                    }
+              else if (e2.checked === true){
+                rate--;}
+				}
+q1();
+q2();
+q3();
+q4();
+q5();	
+
+if (rate < 0) {document.getElementById("gg").innerHTML = 'bad';}
+}
+				
+
+</script>
+</body>
+</html>
